@@ -23,7 +23,12 @@ const Arrow = styled.div`
 }
 	
 	.arrow .curve {
-		width: 600px;
+		width: 400px;
+		
+		@media (min-width: 800px) {
+            width: 600px;
+        }
+        
 		height: 100px; 
 		margin-top: -40px;
 		border:solid 2px #000;
@@ -39,24 +44,36 @@ const Arrow = styled.div`
 	}
 	
 	.arrow .point:before, .arrow .point:after {
-	border: 1px solid #ce0000;
-	height: 25px;
-	content: "";
-	position: absolute;
+		border: 1px solid #ce0000;
+		height: 25px;
+		content: "";
+		position: absolute;
 	}
 	
 	.arrow .point:before {
-	top: -260px;
-	left: 505px;
-	transform:rotate(44deg);
-	-webkit-transform:rotate(44deg);
-	  -moz-transform:rotate(44deg);
-	  -ms-transform: rotate(44deg);
+		top: -255px;
+		left: 315px;
+		
+		@media (min-width: 800px) {
+			top: -260px;
+			left: 505px;
+        }
+	
+		transform:rotate(44deg);
+		-webkit-transform:rotate(44deg);
+		  -moz-transform:rotate(44deg);
+		  -ms-transform: rotate(44deg);
 	}
 	
 	.arrow .point:after {
-		top: -272px;
-		left: 500px;
+		top: -266px;
+		left: 307px;
+		
+		@media (min-width: 800px) {
+			top: -272px;
+			left: 500px;
+        }
+        
 		transform:rotate(-82deg);
 		-webkit-transform: rotate(-82deg);
 		-moz-transform:rotate(-82deg);

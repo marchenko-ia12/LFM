@@ -64,8 +64,14 @@ export default function Header() {
 const CustomHeader = styled.header`
 	display: flex;
 	margin-bottom: 100px;
+	
 	.search {
 		display: flex;
 		margin-left: auto;
+		width: 300px;
+	
+		@media (min-width: 800px) {
+			width: auto;
+		}   
 	}
 `;

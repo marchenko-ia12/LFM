@@ -5,7 +5,7 @@ import {RedArrow} from './arrow';
 import styled from 'styled-components';
 
 
-function ArtistCards() {
+function ArtistList() {
 	const [{artistData}] = useArtistValue();
 	if (!artistData.artistData) return (
 		<>
@@ -30,7 +30,7 @@ function ArtistCards() {
 	);
 }
 
-export default ArtistCards;
+export default ArtistList;
 
 const CardWrapper = styled.div`
 	display: grid;

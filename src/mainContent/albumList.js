@@ -5,7 +5,7 @@ import AlbumCard from './albumCard';
 import styled from 'styled-components';
 
 
-function AlbumCards() {
+function AlbumList() {
 	const [{albumData}] = useArtistValue();
 
 	if (Object.entries(albumData).length === 0) window.location.replace('/');
@@ -25,7 +25,7 @@ function AlbumCards() {
 	);
 }
 
-export default AlbumCards;
+export default AlbumList;
 
 const CardWrapper = styled.div`
 	display: grid;

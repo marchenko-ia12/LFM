@@ -2,12 +2,20 @@ import styled from 'styled-components';
 
 export const MaterialInput = styled.div`
 	position: relative;
+	width: 240px;
+
+	@media (min-width: 800px) {
+		width: auto;
+	}   
 
 	input {
 	  font-size: 16px;
 	  padding: 10px;
 	  display: block;
-	  width: 300px;
+	  
+	  @media (min-width: 800px) {
+	    width: 300px;
+	  }
 	  border: none;
 	  border-bottom: 1px solid #ccc;
 	}
@@ -56,13 +64,22 @@ export const MaterialInput = styled.div`
 	  -webkit-transition: 0.2s ease all;
 	}
 	.bar:before {
-	  left: 50%;
+		left: 30%;	
+		@media (min-width: 800px) {
+			left: 50%; 
+		}
 	}
 	.bar:after {
-	  right: 50%;
+	    right: 60%;
+		@media (min-width: 800px) {
+			right: 50%; 
+		}
 	}
 	/* active state */
 	input:focus ~ .bar:before, input:focus ~ .bar:after {
-	  width: 50%;
+		width: 40%;
+		@media (min-width: 800px) {
+            width: 50%;
+		}
 	}
 `;

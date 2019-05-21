@@ -1,7 +1,7 @@
 import React from 'react';
 import {useRoutes} from 'hookrouter';
-import ArtistCards from './cards/artistCards';
-import AlbumCard from './cards/albumCards';
+import ArtistCards from './mainContent/artistList';
+import AlbumCard from './mainContent/albumList';
 
 const routes = {
 	'/': () => <ArtistCards />,
