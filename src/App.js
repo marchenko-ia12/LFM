@@ -43,5 +43,12 @@ function App() {
 export default App;
 
 const ContentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    max-width: 1366px;
     margin: 40px;
+    
+    @media (min-width: 1366px) {
+        margin: 40px auto;
+    }
 `;
