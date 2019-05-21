@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import {navigate} from 'hookrouter';
 import {useArtistValue} from '../artistProvider';
 import styled from 'styled-components';
 import {MaterialInput} from './input';
+import {Search} from './searchButton';
 import logo from './lastfmLogo.svg';
 
 
@@ -12,6 +13,8 @@ export default function Header() {
 	const [isError, setIsError] = useState(false);
 	const [artistName, setArtistName] = useState('');
 	const [{artistData}, dispatch] = useArtistValue();
+
+	const input = useRef(null);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -41,15 +44,19 @@ export default function Header() {
 	return (
 		<CustomHeader>
 			<a href='/'><img src={logo} alt='site-logo' /></a>
-			<MaterialInput className="group">
-				<input
-					onKeyDown={keyPress}
-					type="text"
-					required
-				/>
-				<span className="bar"/>
-				<label>Поиск исполнителя</label>
-			</MaterialInput>
+			<div className='search'>
+				<MaterialInput className="group">
+					<input
+						ref={input}
+						onKeyDown={keyPress}
+						type="text"
+						required
+					/>
+					<span className="bar"/>
+					<label>Поиск исполнителя</label>
+				</MaterialInput>
+				<Search onClick={() => setArtistName(input.current.value)}>➥</Search>
+			</div>
 		</CustomHeader>
 	);
 }
@@ -57,7 +64,8 @@ export default function Header() {
 const CustomHeader = styled.header`
 	display: flex;
 	margin-bottom: 100px;
-	.group {
+	.search {
+		display: flex;
 		margin-left: auto;
 	}
 `;

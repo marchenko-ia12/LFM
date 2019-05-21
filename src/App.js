@@ -43,5 +43,5 @@ function App() {
 export default App;
 
 const ContentWrapper = styled.div`
-    margin: 50px;
+    margin: 40px;
 `;
